@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  scroll-behavior: smooth;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+body {
+  font-family: GothamPro, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0.3px;
+  color: #808080;
+  background-color: #fff;
+}
+.container {
+  width: 960px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.general-button {
+  background-color: #ffcf3f;
+  text-decoration: none;
+  font-family: GothamPro;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #333333;
+  padding: 20px;
+}
+@font-face {
+  font-family: 'GothamPro';
+  font-display: swap;
+  src: url('../fonts/GothamPro.woff2') format('woff2'), url('../fonts/GothamPro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GothamPro';
+  font-display: swap;
+  src: url('../fonts/GothamPro-Light.woff2') format('woff2'), url('../fonts/GothamPro-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GothamPro';
+  font-display: swap;
+  src: url('../fonts/GothamPro-Medium.woff2') format('woff2'), url('../fonts/GothamPro-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+.page-header {
+  color: #fff;
+  background-color: #374250;
+}
+.page-header__wrap {
+  padding-top: 17px;
+  padding-bottom: 13px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.page-header__text {
+  font-family: GothamPro, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  font-style: normal;
+  padding-left: 20px;
+  position: relative;
+}
+.page-header__text::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.page-header__telephone {
+  margin-left: auto;
+  margin-right: 45px;
+  padding-left: 24px;
+}
+.page-header__telephone::before {
+  top: 3px;
+  width: 14px;
+  height: 14px;
+  background-image: url('../img/Orion_calls (white).svg');
+}
+.page-header__address::before {
+  width: 14px;
+  height: 14px;
+  background-image: url('../img/Orion_pin (white).svg');
+}
+.delivery {
+  background-color: #f1f0f5;
+}
+.delivery__about-delivery {
+  border-bottom: 1px solid #000;
+}
+.delivery__about-delivery::after {
+  content: '';
+  display: block;
+  width: 641px;
+  height: 461px;
+  background-image: url('../img/shipping_container-min.jpg');
+}
+.delivery__header {
+  font-family: GothamPro;
+  font-size: 55px;
+  font-weight: 300;
+  color: #374250;
+}
+.delivery__text {
+  font-family: GothamPro;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  color: #333333;
+}
