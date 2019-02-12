@@ -5,6 +5,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .visually-hidden {
   position: absolute;
@@ -24,6 +25,7 @@ body {
   letter-spacing: 0.3px;
   color: #808080;
   background-color: #fff;
+  margin: 0;
 }
 .container {
   width: 960px;
@@ -32,6 +34,7 @@ body {
 }
 .general-button {
   background-color: #ffcf3f;
+  display: inline-block;
   text-decoration: none;
   font-family: GothamPro;
   font-size: 16px;
@@ -39,7 +42,8 @@ body {
   letter-spacing: 0.3px;
   text-align: center;
   color: #333333;
-  padding: 20px;
+  padding: 15px 20px;
+  border-radius: 3px;
 }
 @font-face {
   font-family: 'GothamPro';
@@ -112,20 +116,35 @@ body {
   background-color: #f1f0f5;
 }
 .delivery__about-delivery {
-  border-bottom: 1px solid #000;
+  padding-top: 89px;
+  width: 530px;
+  position: relative;
+  padding-bottom: 55px;
 }
 .delivery__about-delivery::after {
   content: '';
   display: block;
-  width: 641px;
-  height: 461px;
+  -ms-flex-preferred-size: 641px;
+      flex-basis: 641px;
+  width: 766px;
+  height: 460px;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-image: url('../img/shipping_container-min.jpg');
+  position: absolute;
+  left: 83%;
+  top: 34px;
+  z-index: 1;
 }
 .delivery__header {
   font-family: GothamPro;
   font-size: 55px;
   font-weight: 300;
+  line-height: 1.2;
   color: #374250;
+  margin-bottom: 7px;
+  position: relative;
+  z-index: 5;
 }
 .delivery__text {
   font-family: GothamPro;
@@ -133,4 +152,57 @@ body {
   font-weight: 300;
   letter-spacing: 0.4px;
   color: #333333;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+.delivery__advantages {
+  border-top: 1px solid #d6d6d6;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0;
+  padding: 41px 25px;
+  padding-bottom: 35px;
+  position: relative;
+  z-index: 5;
+}
+.delivery__advantages-item {
+  list-style: none;
+  padding-left: 45px;
+  position: relative;
+}
+.delivery__advantages-item::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+.delivery__advantages-item:nth-child(1)::before {
+  background-image: url('../img/delivery__umbrella.svg');
+}
+.delivery__advantages-item:nth-child(2)::before {
+  background-image: url('../img/delivery__money-box.svg');
+}
+.delivery__advantages-item:nth-child(3)::before {
+  background-image: url('../img/delivery__shield-security.svg');
+}
+.delivery__advantages-item b {
+  font-family: GothamPro;
+  font-size: 19px;
+  font-weight: 500;
+  color: #333333;
+}
+.delivery__advantages-item p {
+  font-family: GothamPro;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  color: #808080;
+  margin: 6px 0;
 }
