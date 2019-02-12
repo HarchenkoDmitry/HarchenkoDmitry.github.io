@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+body {
+    font-family: Gilroy, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000;
+    background-color: #fff;
+}
+
+.container {
+    width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@font-face {
+font-family: 'Minion Pro';
+font-display: swap;
+src: url('../fonts/MinionPro-Regular.eot');
+src: url('../fonts/MinionPro-Regular.eot?#iefix') format('embedded-opentype'),
+url('../fonts/MinionPro-Regular.woff') format('woff'),
+url('../fonts/MinionPro-Regular.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
