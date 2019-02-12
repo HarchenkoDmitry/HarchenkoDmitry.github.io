@@ -433,8 +433,8 @@ body {
   background-image: url('../img/advantages-bg.png');
   background-repeat: no-repeat;
   position: absolute;
-  left: 0;
-  top: 200px;
+  left: 75px;
+  top: 190px;
 }
 .advantage__list {
   margin: 0;
