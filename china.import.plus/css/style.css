@@ -526,7 +526,6 @@ body {
   padding: 100vh 0;
   transform: translateZ(-300px) scale(2.1);
   background-image: url('../img/parallax-min.jpg');
-  box-shadow: 0 0 0 1000px rgba(36, 43, 51, 0.75) inset;
   background-size: 100%;
   background-repeat: no-repeat;
 }
