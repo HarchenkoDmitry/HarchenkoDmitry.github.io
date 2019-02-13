@@ -26,6 +26,10 @@ body {
   color: #808080;
   background-color: #fff;
   margin: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 300px;
 }
 .container {
   width: 960px;
@@ -336,7 +340,8 @@ body {
 }
 .additional-services {
   text-align: center;
-  margin-bottom: 80px;
+  padding-bottom: 80px;
+  background-color: #fff;
 }
 .additional-services__plus {
   font-family: GothamPro;
@@ -423,6 +428,23 @@ body {
   background-color: #f1f0f5;
   padding-top: 35px;
   padding-bottom: 100px;
+  position: relative;
+}
+.advantage::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  background-image: url('../img/about__arrow-down.svg');
+  background-color: #ffcf3f;
+  background-size: 28px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4.6px 0.5px rgba(32, 32, 32, 0.25);
 }
 .advantage__wrap {
   position: relative;
@@ -487,4 +509,57 @@ body {
   letter-spacing: 0.2px;
   color: #808080;
   margin-top: 8px;
+}
+.about {
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+.about::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 100vh 0;
+  transform: translateZ(-300px) scale(2);
+  background-image: url('../img/parallax-min.jpg');
+  box-shadow: 0 0 0 1000px rgba(36, 43, 51, 0.75) inset;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.about table {
+  font-family: GothamPro;
+  color: #ffffff;
+  border-collapse: separate;
+  margin-bottom: 83px;
+}
+.about table td {
+  font-size: 56px;
+  font-weight: 500;
+  padding-left: 7%;
+  width: 20%;
+}
+.about table th {
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+  padding-left: 7%;
+}
+.about__header {
+  font-family: GothamPro;
+  font-size: 52px;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin-top: 81px;
+  margin-bottom: 84px;
+}
+.delivery-stages {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
 }
