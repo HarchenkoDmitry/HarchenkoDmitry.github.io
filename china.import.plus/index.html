@@ -17,7 +17,7 @@
   </header>
 
   <main>
-    <section class="delivery">
+    <section class="delivery" id="delivery">
       <h2 class="visually-hidden">Доставка</h2>
       <div class="delivery__wrap container">
         <section class="delivery__about-delivery">
@@ -44,40 +44,42 @@
       </div>
     </section>
 
-    <section class="services container">
-      <h2 class="services__header general-header">Наши услуги</h2>
-      <p class="services__text">Мы знаем оптимальное решение для вашего бизнеса</p>
-      <ul class="services__delivery">
-        <li class="services__item">
-          <h3 class="services__item-header">Ж/Д доставка из Китая</h3>
-          <span class="services__item-weight">от 50 кг</span>
-          <span class="services__item-time">12-18 дней</span>
-          <p class="services__item-text">Лучшее соотношение стоимости ко времени доставки. Идеальное решение для бизнеса с регулярной доставкой.</p>
-          <a href="#" class="general-button services__button">Узнать подробнее</a>
-        </li>
-        <li class="services__item">
-          <h3 class="services__item-header">Авиа доставка из Китая</h3>
-          <span class="services__item-weight">от 30 кг</span>
-          <span class="services__item-time">8-12 дней</span>
-          <p class="services__item-text">Самый быстрый, но дорогой способ доставки. Идеальное решение для доставки образцов продукции.</p>
-          <a href="#" class="general-button services__button">Узнать подробнее</a>
-        </li>
-        <li class="services__item">
-          <h3 class="services__item-header">Морская доставка из Китая</h3>
-          <span class="services__item-weight">от 1000 кг</span>
-          <span class="services__item-time">45-55 дней</span>
-          <p class="services__item-text">Экономичный способ доставки «моно» грузов. Решение для бизнеса с возможностью «заморозки» активов.</p>
-          <a href="#" class="general-button services__button">Узнать подробнее</a>
-        </li>
-        <li class="services__item">
-          <h3 class="services__item-header">Авто доставка из Китая</h3>
-          <span class="services__item-weight">от 30 кг</span>
-          <span class="services__item-time">20-25 дней</span>
-          <p class="services__item-text">Экономичный способ доставки. Идеально подходит тем, кому очень важна стоимость доставки.</p>
-          <a href="#" class="general-button services__button">Узнать подробнее</a>
-        </li>
-      </ul>
-      <p class="services__subtext">* Срок доставки указан с учетом прохождения таможни</p>
+    <section class="services">
+      <div class="container">
+        <h2 class="services__header general-header">Наши услуги</h2>
+        <p class="services__text">Мы знаем оптимальное решение для вашего бизнеса</p>
+        <ul class="services__delivery">
+          <li class="services__item">
+            <h3 class="services__item-header">Ж/Д доставка из Китая</h3>
+            <span class="services__item-weight">от 50 кг</span>
+            <span class="services__item-time">12-18 дней</span>
+            <p class="services__item-text">Лучшее соотношение стоимости ко времени доставки. Идеальное решение для бизнеса с регулярной доставкой.</p>
+            <a href="#" class="general-button services__button">Узнать подробнее</a>
+          </li>
+          <li class="services__item">
+            <h3 class="services__item-header">Авиа доставка из Китая</h3>
+            <span class="services__item-weight">от 30 кг</span>
+            <span class="services__item-time">8-12 дней</span>
+            <p class="services__item-text">Самый быстрый, но дорогой способ доставки. Идеальное решение для доставки образцов продукции.</p>
+            <a href="#" class="general-button services__button">Узнать подробнее</a>
+          </li>
+          <li class="services__item">
+            <h3 class="services__item-header">Морская доставка из Китая</h3>
+            <span class="services__item-weight">от 1000 кг</span>
+            <span class="services__item-time">45-55 дней</span>
+            <p class="services__item-text">Экономичный способ доставки «моно» грузов. Решение для бизнеса с возможностью «заморозки» активов.</p>
+            <a href="#" class="general-button services__button">Узнать подробнее</a>
+          </li>
+          <li class="services__item">
+            <h3 class="services__item-header">Авто доставка из Китая</h3>
+            <span class="services__item-weight">от 30 кг</span>
+            <span class="services__item-time">20-25 дней</span>
+            <p class="services__item-text">Экономичный способ доставки. Идеально подходит тем, кому очень важна стоимость доставки.</p>
+            <a href="#" class="general-button services__button">Узнать подробнее</a>
+          </li>
+        </ul>
+        <p class="services__subtext">* Срок доставки указан с учетом прохождения таможни</p>
+      </div>
     </section>
 
     <section class="additional-services">
@@ -154,9 +156,50 @@
     </section>
 
     <section class="delivery-stages">
-      
+      <div class="container">
+        <h2 class="delivery-stages__header">Этапы доставки из Китая</h2>
+        <ol class="delivery-stages__list">
+          <li class="delivery-stages__list-item">Производства<br>в Китае</li>
+          <li class="delivery-stages__list-item">Склад<br>в Китае</li>
+          <li class="delivery-stages__list-item">Фотоотчет</li>
+          <li class="delivery-stages__list-item">Логистика по территории Китая </li>
+          <li class="delivery-stages__list-item">Таможенная очистка</li>
+          <li class="delivery-stages__list-item">Логистика по территории России</li>
+          <li class="delivery-stages__list-item">Груз на<br>Вашем складе </li>
+        </ol>
+        <a href="#" class="general-button">Узнать об этапах подробнее</a>
+      </div>
     </section>
   </main>
+
+  <footer class="page-footer">
+    <div class="page-footer__wrap container">
+      <p class="page-footer__copyright">© Все права защищены<br>
+      ООО "ТРАНСФЕР ГРУПП"<br>
+      ОГРН: 1177746149998<br>
+      <a href="#">Политика конфиденциальности</a></p>
+      <nav class="page-footer__nav">
+        <ul class="page-footer__list-nav">
+          <li><a href="#delivery" class="page-footer__item-nav">Наши услуги</a></li>
+          <li><a href="#" class="page-footer__item-nav">Дополнительные услуги</a></li>
+          <li><a href="#" class="page-footer__item-nav">Наши преимущества</a></li>
+          <li><a href="#" class="page-footer__item-nav">О компании в цифрах</a></li>
+          <li><a href="#" class="page-footer__item-nav">Отзывы клиентов</a></li>
+          <li><a href="#" class="page-footer__item-nav">Этапы доставки из Китая</a></li>
+          <li><a href="#" class="page-footer__item-nav">Наша команда</a></li>
+          <li><a href="#" class="page-footer__item-nav">Как с нами связаться</a></li>
+        </ul>
+      </nav>
+      <section class="page-footer__social">
+        <h2 class="page-footer__social-header">Мы в соцсетях</h2>
+        <ul class="page-footer__social-list">
+          <li><a href="#">Мы Вконтакте</a></li>
+          <li><a href="#">Мы в Facebook</a></li>
+          <li><a href="#">Мы в instagram</a></li>
+        </ul>
+      </section>
+    </div>
+  </footer>
 
 </body>
 </html>
