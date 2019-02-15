@@ -920,6 +920,43 @@ body {
 .contacts {
   background-color: #f1f0f5;
 }
+.contacts__wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 85px;
+  border-bottom: 1px solid #d6d6d6;
+}
+.contacts__header {
+  margin-top: 85px;
+  width: 100%;
+}
+.contacts__tel,
+.contacts__address {
+  text-align: center;
+  width: 100%;
+  font-family: GothamPro;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: 0.4px;
+  color: #808080;
+  text-decoration: none;
+}
+.contacts__tel:hover {
+  text-decoration: underline;
+}
+.contacts__address {
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+.contacts__map {
+  border: none;
+}
+.contacts__form {
+  width: 50%;
+}
 .page-footer {
   background-color: #374250;
   color: #fff;
