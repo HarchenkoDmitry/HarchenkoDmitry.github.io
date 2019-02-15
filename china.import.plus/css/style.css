@@ -3,10 +3,29 @@
 *::after {
   box-sizing: inherit;
 }
+::-moz-selection {
+  background: #ffcf3f;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: #ffcf3f;
+  color: #fff;
+  text-shadow: none;
+}
+::-moz-selection {
+  background: #ffcf3f;
+  color: #fff;
+  text-shadow: none;
+}
+::-webkit-selection {
+  background: #ffcf3f;
+  color: #fff;
+  text-shadow: none;
+}
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  perspective: 300px;
 }
 .visually-hidden {
   position: absolute;
@@ -30,7 +49,7 @@ body {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  scroll-behavior: smooth;
+  perspective: 300px;
 }
 .container {
   width: 960px;
@@ -82,12 +101,6 @@ body {
 .page-header {
   color: #fff;
   background-color: #374250;
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
-  width: 100%;
-  margin: 0 auto;
 }
 .page-header__wrap {
   padding-top: 17px;
@@ -133,7 +146,6 @@ body {
 }
 .delivery {
   background-color: #f1f0f5;
-  margin-top: 80px;
 }
 .delivery__about-delivery {
   padding-top: 89px;
@@ -432,6 +444,263 @@ body {
 }
 .comment {
   background-color: #f1f0f5;
+  padding-top: 41px;
+  padding-bottom: 85px;
+}
+.comment__header {
+  margin-bottom: 81px;
+}
+.comment__item {
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+.comment__item iframe {
+  border: none;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  min-height: 230px;
+}
+.comment__descritpion {
+  margin-left: 20px;
+  -ms-flex-preferred-size: 46%;
+      flex-basis: 46%;
+}
+.comment__item-header {
+  font-family: GothamPro;
+  font-size: 22px;
+  font-weight: 500;
+  color: #333333;
+  margin-top: 0;
+}
+.comment__text {
+  font-family: GothamPro;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #808080;
+}
+.comment__link {
+  font-family: GothamPro;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #7ea8d6;
+}
+.reviews__list {
+  box-sizing: border-box;
+  padding-left: 100px;
+  padding-right: 50px;
+  margin: 0;
+  position: relative;
+}
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 30%;
+}
+.owl-prev:hover,
+.owl-next:hover {
+  background: none;
+}
+.owl-prev span,
+.owl-next span {
+  display: block;
+  width: 26px;
+  height: 26px;
+  font-size: 0;
+  line-height: 0;
+  border-top: 3px solid #7ea9d6;
+  border-left: 3px solid #7ea9d6;
+}
+.owl-prev.disabled,
+.owl-next.disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.owl-prev {
+  left: 20px;
+}
+.owl-prev span {
+  transform: rotate(-45deg);
+}
+.owl-next {
+  right: 20px;
+}
+.owl-next span {
+  transform: rotate(135deg);
+}
+.owl-item {
+  width: auto;
+}
+.owl-dots {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  padding-top: 50px;
+}
+.reviews__list .owl-dots .owl-dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+  border-radius: 50%;
+  background: #d8e5f3;
+  border: 2px solid #F2F6FA;
+  outline: none;
+  margin: 0 5px;
+  transition: all 0.5s;
+}
+.reviews__list .owl-dots .owl-dot:hover,
+.reviews__list .owl-dots .owl-dot:focus {
+  background: #98b9de;
+  transition: all 0.5s;
+}
+.reviews__list .owl-dots .owl-dot.active {
+  background: #7ea8d6;
+  border: 2px solid #7ea8d6;
+  transition: all 0.5s;
+}
+.command {
+  background-color: #fff;
+}
+.command__text {
+  font-family: GothamPro;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #808080;
+  text-transform: uppercase;
+}
+.owl-carousel.command__list {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.command__item {
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+.command__column-left {
+  width: 50%;
+  padding-left: 200px;
+  padding-right: 50px;
+}
+.command__column-left img {
+  max-width: 100%;
+  height: auto;
+}
+.command__column-right {
+  padding-top: 110px;
+  width: 50%;
+}
+.command__item-header {
+  font-family: GothamPro;
+  font-size: 22px;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 0;
+}
+.command__item-text {
+  font-family: GothamPro;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #808080;
+  margin-top: 5px;
+}
+.command__item-link {
+  font-family: GothamPro;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #7ea8d6;
+}
+.command__item-quote {
+  font-family: OpenSans;
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.3px;
+  color: #808080;
+  margin: 0;
+  margin-top: 50px;
+  width: 260px;
+}
+.command__item-signature {
+  max-width: 100%;
+  height: auto;
+  padding-left: 30%;
+  padding-right: 50%;
+  position: relative;
+  top: -20px;
+}
+.command__list .owl-prev,
+.command__list .owl-next {
+  top: 50%;
+}
+.command__list .owl-dots {
+  -ms-flex-order: -1;
+      order: -1;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.command__list .owl-dot {
+  opacity: 0.3;
+}
+.command__list .owl-dot.active {
+  opacity: 1;
+}
+.command__list .owl-dot span {
+  display: block;
+  width: 36px;
+  height: 36px;
+  background-size: cover;
+  margin: 5px;
+}
+.command__list .owl-dot:nth-child(1) span {
+  background-image: url(../img/aleksey-min-min.png);
+}
+.command__list .owl-dot:nth-child(2) span {
+  background-image: url(../img/vyacheslav-min-min.png);
+}
+.command__list .owl-dot:nth-child(3) span {
+  background-image: url(../img/ivan-min-min.png);
+}
+.command__list .owl-dot:nth-child(4) span {
+  background-image: url(../img/mihail-min-min.png);
+}
+.command__list .owl-dot:nth-child(5) span {
+  background-image: url(../img/oleg-min-min.png);
+}
+.command__list .owl-dot:nth-child(6) span {
+  background-image: url(../img/marina-min-min.png);
+}
+.command__list .owl-dot:nth-child(7) span {
+  background-image: url(../img/maria-min-min.png);
+}
+.command__list .owl-dot:nth-child(8) span {
+  background-image: url(../img/ilona-min-min.png);
+}
+.command__list .owl-dot:nth-child(9) span {
+  background-image: url(../img/valeriy-min-min.png);
+}
+.command__list .owl-dot:nth-child(10) span {
+  background-image: url(../img/aleksandr-min-min.png);
+}
+.command__list .owl-dot:nth-child(11) span {
+  background-image: url(../img/andrey-min-min.png);
+}
+.command__list .owl-dot:nth-child(12) span {
+  background-image: url(../img/aleksey-tolmachev-min-min.png);
 }
 .advantage {
   background-color: #f1f0f5;
