@@ -955,7 +955,10 @@ body {
   border: none;
 }
 .contacts__form {
-  width: 50%;
+  width: 400px;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  padding-left: 2%;
 }
 .page-footer {
   background-color: #374250;
