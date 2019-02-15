@@ -46,10 +46,6 @@ body {
   color: #808080;
   background-color: #fff;
   margin: 0;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  perspective: 300px;
 }
 .container {
   width: 960px;
@@ -789,23 +785,12 @@ body {
   margin-top: 8px;
 }
 .about {
-  position: relative;
-  transform-style: preserve-3d;
-  z-index: -1;
-}
-.about::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: -100%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 50vh 0;
-  transform: translateZ(-200px) scale(2);
   background-image: url('../img/parallax-min.jpg');
-  background-size: 100%;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: -ms-flexbox;
+  display: flex;
 }
 .about table {
   font-family: GothamPro;
@@ -931,6 +916,9 @@ body {
 }
 .delivery-stages__list-item:nth-child(7)::after {
   background-image: url('../img/location-flag.svg');
+}
+.contacts {
+  background-color: #f1f0f5;
 }
 .page-footer {
   background-color: #374250;
