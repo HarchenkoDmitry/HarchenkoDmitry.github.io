@@ -1215,8 +1215,7 @@ img {
   .page-footer__wrap {
     -ms-flex-direction: column;
         flex-direction: column;
-    -ms-flex-line-pack: center;
-        align-content: center;
+    align-items: center;
   }
   .page-footer__nav {
     margin-bottom: 59px;
