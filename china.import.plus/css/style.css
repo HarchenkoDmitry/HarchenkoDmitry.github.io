@@ -26,6 +26,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 .visually-hidden {
   position: absolute;
@@ -78,6 +79,11 @@ img {
   font-weight: 300;
   text-align: center;
   color: #374250;
+}
+@media screen and (max-width: 700px) {
+  .general-header {
+    font-size: 34px;
+  }
 }
 @font-face {
   font-family: 'GothamPro';
@@ -305,7 +311,7 @@ img {
   }
   .delivery__about-delivery::after {
     width: 100%;
-    top: 45%;
+    top: 48%;
   }
   .delivery__header {
     font-size: 34px;
@@ -351,8 +357,10 @@ img {
       flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  margin-left: -5%;
 }
 .services__item {
+  margin-left: 5%;
   background-color: #fcfcfc;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
@@ -360,7 +368,10 @@ img {
   padding-left: 27px;
   padding-right: 20px;
   padding-bottom: 29px;
-  width: calc(48.7% - 47px);
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-preferred-size: 280px;
+      flex-basis: 280px;
   margin-bottom: 21px;
   position: relative;
   list-style: none;
@@ -445,6 +456,11 @@ img {
   color: #808080;
   margin-top: 7px;
 }
+@media screen and (max-width: 700px) {
+  .services__text {
+    font-size: 12px;
+  }
+}
 .additional-services {
   text-align: center;
   padding-bottom: 80px;
@@ -480,8 +496,10 @@ img {
   margin: 0;
   margin-bottom: 30px;
   padding: 0;
+  margin-left: -5%;
 }
 .additional-services__item {
+  margin-left: 5%;
   background-color: #fcfcfc;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
@@ -489,7 +507,10 @@ img {
   padding-left: 28px;
   padding-right: 20px;
   padding-bottom: 25px;
-  width: calc(48.7% - 47px);
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  -ms-flex-preferred-size: 280px;
+      flex-basis: 280px;
   margin-bottom: 21px;
   position: relative;
   list-style: none;
@@ -528,6 +549,11 @@ img {
   letter-spacing: 0.2px;
   color: #808080;
 }
+@media screen and (max-width: 700px) {
+  .additional-services__text {
+    font-size: 12px;
+  }
+}
 .comment {
   background-color: #f1f0f5;
   padding-top: 41px;
@@ -539,6 +565,8 @@ img {
 .comment__item {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style: none;
 }
 .comment__item iframe {
@@ -546,11 +574,14 @@ img {
   -ms-flex-positive: 1;
       flex-grow: 1;
   min-height: 230px;
+  margin-bottom: 20px;
 }
 .comment__descritpion {
   margin-left: 20px;
   -ms-flex-preferred-size: 46%;
       flex-basis: 46%;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
 }
 .comment__item-header {
   font-family: GothamPro;
@@ -624,7 +655,7 @@ img {
       align-items: center;
   -ms-flex-pack: center;
       justify-content: center;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 .reviews__list .owl-dots .owl-dot {
   display: block;
@@ -648,6 +679,17 @@ img {
   background: #7ea8d6;
   border: 2px solid #7ea8d6;
   transition: all 0.5s;
+}
+@media screen and (max-width: 900px) {
+  .reviews__list {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  .comment__wrap {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 .command {
   background-color: #fff;
@@ -1215,7 +1257,8 @@ img {
   .page-footer__wrap {
     -ms-flex-direction: column;
         flex-direction: column;
-    align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
   }
   .page-footer__nav {
     margin-bottom: 59px;
@@ -1228,5 +1271,6 @@ img {
     margin-top: 52px;
     -ms-flex-order: 3;
         order: 3;
+    padding-left: 9%;
   }
 }

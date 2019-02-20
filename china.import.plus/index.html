@@ -111,7 +111,7 @@
         <h2 class="comment__header general-header">Отзывы реальных клиентов</h2>
         <ul class="owl-carousel reviews__list">
           <li class="comment__item">
-            <iframe src="https://www.youtube.com/embed/UT4DcnXc7wo"></iframe>
+            <iframe src="https://www.youtube.com/embed/UT4DcnXc7wo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
             <div class="comment__descritpion">
               <h3 class="comment__item-header">Студия «RomanovLiveMedia»</h3>
               <p class="comment__text">Продюсер и автор проекта Дмитрий Романов</p>
@@ -377,9 +377,18 @@
   <script>$(document).ready(function(){
     $('.owl-carousel').owlCarousel({
       items: 1,
-      nav: true,
       video: true,
-      mouseDrag: false
+      mouseDrag: false,
+      responsive: {
+        0: {
+          nav: false,
+          mouseDrag: true
+        },
+        900: {
+          nav: true,
+          mouseDrag: false
+        }
+      }
     });
   });</script>
 </body>
