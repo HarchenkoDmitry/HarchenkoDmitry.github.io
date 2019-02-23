@@ -1,3 +1,11 @@
+img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+ 
+img[data-src] {
+  opacity: 0;
+}
 *,
 *::before,
 *::after {
@@ -64,7 +72,6 @@ img {
   display: inline-block;
   text-decoration: none;
   border: none;
-  font-family: GothamPro;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -74,7 +81,6 @@ img {
   border-radius: 3px;
 }
 .general-header {
-  font-family: GothamPro;
   font-size: 52px;
   font-weight: 300;
   text-align: center;
@@ -126,8 +132,6 @@ img {
       align-items: center;
 }
 .page-header__text {
-  font-family: GothamPro, Arial, sans-serif;
-  font-size: 14px;
   line-height: 1.43;
   font-style: normal;
   padding-left: 20px;
@@ -202,7 +206,6 @@ img {
   z-index: 2;
 }
 .delivery__header {
-  font-family: GothamPro;
   font-size: 55px;
   font-weight: 300;
   line-height: 1.2;
@@ -212,7 +215,6 @@ img {
   z-index: 5;
 }
 .delivery__text {
-  font-family: GothamPro;
   font-size: 20px;
   font-weight: 300;
   letter-spacing: 0.4px;
@@ -258,14 +260,11 @@ img {
   background-image: url('../img/shield-security.svg');
 }
 .delivery__advantages-item b {
-  font-family: GothamPro;
   font-size: 19px;
   font-weight: 500;
   color: #333333;
 }
 .delivery__advantages-item p {
-  font-family: GothamPro;
-  font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.3px;
   color: #808080;
@@ -342,7 +341,6 @@ img {
   margin-bottom: 17px;
 }
 .services__text {
-  font-family: GothamPro;
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -400,7 +398,6 @@ img {
   background-image: url('../img/truck.svg');
 }
 .services__item-header {
-  font-family: GothamPro;
   font-size: 22px;
   font-weight: 500;
   color: #333333;
@@ -409,7 +406,6 @@ img {
 }
 .services__item-weight,
 .services__item-time {
-  font-family: GothamPro;
   font-size: 16px;
   letter-spacing: 0.3px;
   color: #666666;
@@ -438,8 +434,6 @@ img {
   background-image: url('../img/time.svg');
 }
 .services__item-text {
-  font-family: GothamPro;
-  font-size: 14px;
   letter-spacing: 0.3px;
   color: #808080;
   margin-top: 17px;
@@ -451,7 +445,6 @@ img {
   bottom: 29px;
 }
 .services__subtext {
-  font-family: GothamPro;
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 0.3px;
@@ -470,7 +463,6 @@ img {
   background-color: #fff;
 }
 .additional-services__plus {
-  font-family: GothamPro;
   font-size: 100px;
   font-weight: 500;
   color: #7ea8d6;
@@ -479,7 +471,6 @@ img {
   margin-top: -10px;
 }
 .additional-services__text {
-  font-family: GothamPro;
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -539,7 +530,6 @@ img {
   background-image: url('../img/receipt.svg');
 }
 .additional-services__item-header {
-  font-family: GothamPro;
   font-size: 19px;
   font-weight: 500;
   color: #333333;
@@ -547,8 +537,6 @@ img {
   margin-bottom: 17px;
 }
 .additional-services__item-text {
-  font-family: GothamPro;
-  font-size: 14px;
   letter-spacing: 0.2px;
   color: #808080;
 }
@@ -587,21 +575,16 @@ img {
       flex-grow: 1;
 }
 .comment__item-header {
-  font-family: GothamPro;
   font-size: 22px;
   font-weight: 500;
   color: #333333;
   margin-top: 0;
 }
 .comment__text {
-  font-family: GothamPro;
-  font-size: 14px;
   letter-spacing: 0.3px;
   color: #808080;
 }
 .comment__link {
-  font-family: GothamPro;
-  font-size: 14px;
   letter-spacing: 0.3px;
   color: #7ea8d6;
 }
@@ -709,7 +692,6 @@ img {
   background-color: #fff;
 }
 .command__text {
-  font-family: GothamPro;
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -750,27 +732,22 @@ img {
       flex-basis: 40%;
 }
 .command__item-header {
-  font-family: GothamPro;
   font-size: 22px;
   font-weight: 500;
   color: #333333;
   margin-bottom: 0;
 }
 .command__item-text {
-  font-family: GothamPro;
-  font-size: 14px;
   letter-spacing: 0.3px;
   color: #808080;
   margin-top: 5px;
 }
 .command__item-link {
-  font-family: GothamPro;
-  font-size: 14px;
   letter-spacing: 0.3px;
   color: #7ea8d6;
 }
 .command__item-quote {
-  font-family: OpenSans;
+  font-family: OpenSans, Arial, sans-serif;
   font-size: 15px;
   font-weight: 300;
   font-style: italic;
@@ -1009,14 +986,11 @@ img {
   background-image: url('../img/contact-card.svg');
 }
 .advantage__item-header {
-  font-family: GothamPro;
   font-size: 20px;
   font-weight: 500;
   color: #333333;
 }
 .advantage__item-text {
-  font-family: GothamPro;
-  font-size: 14px;
   letter-spacing: 0.2px;
   color: #808080;
   margin-top: 8px;
@@ -1060,7 +1034,6 @@ img {
   display: flex;
 }
 .about__table {
-  font-family: GothamPro;
   color: #ffffff;
   margin: 0;
   padding: 0;
@@ -1150,8 +1123,6 @@ img {
   display: block;
   position: relative;
   max-width: 140px;
-  font-family: GothamPro;
-  font-size: 14px;
   line-height: 1.29;
   letter-spacing: 0.3px;
   color: #333333;
@@ -1315,7 +1286,6 @@ img {
 .contacts__address {
   text-align: center;
   width: 100%;
-  font-family: GothamPro;
   font-size: 18px;
   font-style: normal;
   line-height: 1.67;
@@ -1386,15 +1356,12 @@ img {
 }
 .address-china__column-left h3,
 .address-china__column-right h3 {
-  font-family: GothamPro;
   font-size: 22px;
   font-weight: 500;
   color: #333333;
 }
 .address-china__column-left p,
 .address-china__column-right p {
-  font-family: GothamPro;
-  font-size: 14px;
   letter-spacing: 0.3px;
   color: #808080;
 }
@@ -1403,6 +1370,7 @@ img {
 }
 .address-china__column-right {
   padding-left: 2%;
+  margin-bottom: 30px;
 }
 @media screen and (max-width: 900px) {
   .address-china__column-left,
@@ -1413,9 +1381,6 @@ img {
   .address-china__column-left iframe,
   .address-china__column-right iframe {
     display: none;
-  }
-  .address-china__column-right {
-    margin-bottom: 30px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -1446,7 +1411,6 @@ img {
       flex-wrap: wrap;
 }
 .page-footer__copyright {
-  font-family: GothamPro;
   font-size: 13px;
   line-height: 1.54;
   letter-spacing: 0.3px;
@@ -1479,7 +1443,6 @@ img {
   list-style: none;
 }
 .page-footer__item-nav {
-  font-family: GothamPro;
   font-size: 13px;
   line-height: 1.69;
   letter-spacing: 0.3px;
@@ -1491,7 +1454,6 @@ img {
   width: 188px;
 }
 .page-footer__social-header {
-  font-family: GothamPro;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.38;
@@ -1525,7 +1487,7 @@ img {
   display: block;
   position: absolute;
   background-size: 25px;
-  background-position: 11px;
+  background-position: 9px;
   background-repeat: no-repeat;
 }
 .page-footer__social-list li:nth-child(1) a::before {
@@ -1536,7 +1498,7 @@ img {
 }
 .page-footer__social-list li:nth-child(3) a::before {
   background-image: url('../img/inst.svg');
-  background-position: 12px;
+  background-position: 10px;
 }
 @media screen and (max-width: 900px) and (min-width: 701px) {
   .page-footer__wrap {
