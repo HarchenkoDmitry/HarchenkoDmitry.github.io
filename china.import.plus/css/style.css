@@ -1,11 +1,3 @@
-img {
-  opacity: 1;
-  transition: opacity 0.3s;
-}
- 
-img[data-src] {
-  opacity: 0;
-}
 *,
 *::before,
 *::after {
@@ -59,7 +51,8 @@ body {
 }
 img {
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
+  width: auto;
 }
 .container {
   max-width: 960px;
