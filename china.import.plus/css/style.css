@@ -552,12 +552,14 @@ img {
       flex-wrap: wrap;
   list-style: none;
 }
-.comment__item iframe {
+.comment__item iframe,
+.comment__item .youtube {
   border: none;
   -ms-flex-positive: 1;
       flex-grow: 1;
   min-height: 230px;
   margin-bottom: 20px;
+  min-width: 50%;
 }
 .comment__descritpion {
   margin-left: 20px;
