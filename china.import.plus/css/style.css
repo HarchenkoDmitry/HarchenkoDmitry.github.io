@@ -187,7 +187,7 @@ img {
   height: 460px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('../img/shipping_container-min.jpg');
+  background-image: url('../img/shipping_container-min.webp');
   position: absolute;
   left: 83%;
   top: 34px;
@@ -790,40 +790,40 @@ img {
   margin: 5px;
 }
 .command__list .owl-dot:nth-child(1) span {
-  background-image: url(../img/aleksey-min-min.png);
+  background-image: url(../img/aleksey-min-min.webp);
 }
 .command__list .owl-dot:nth-child(2) span {
-  background-image: url(../img/vyacheslav-min-min.png);
+  background-image: url(../img/vyacheslav-min-min.webp);
 }
 .command__list .owl-dot:nth-child(3) span {
-  background-image: url(../img/ivan-min-min.png);
+  background-image: url(../img/ivan-min-min.webp);
 }
 .command__list .owl-dot:nth-child(4) span {
-  background-image: url(../img/mihail-min-min.png);
+  background-image: url(../img/mihail-min-min.webp);
 }
 .command__list .owl-dot:nth-child(5) span {
-  background-image: url(../img/oleg-min-min.png);
+  background-image: url(../img/oleg-min-min.webp);
 }
 .command__list .owl-dot:nth-child(6) span {
-  background-image: url(../img/marina-min-min.png);
+  background-image: url(../img/marina-min-min.webp);
 }
 .command__list .owl-dot:nth-child(7) span {
-  background-image: url(../img/maria-min-min.png);
+  background-image: url(../img/maria-min-min.webp);
 }
 .command__list .owl-dot:nth-child(8) span {
-  background-image: url(../img/ilona-min-min.png);
+  background-image: url(../img/ilona-min-min.webp);
 }
 .command__list .owl-dot:nth-child(9) span {
-  background-image: url(../img/valeriy-min-min.png);
+  background-image: url(../img/valeriy-min-min.webp);
 }
 .command__list .owl-dot:nth-child(10) span {
-  background-image: url(../img/aleksandr-min-min.png);
+  background-image: url(../img/aleksandr-min-min.webp);
 }
 .command__list .owl-dot:nth-child(11) span {
-  background-image: url(../img/andrey-min-min.png);
+  background-image: url(../img/andrey-min-min.webp);
 }
 .command__list .owl-dot:nth-child(12) span {
-  background-image: url(../img/aleksey-tolmachev-min-min.png);
+  background-image: url(../img/aleksey-tolmachev-min-min.webp);
 }
 @media screen and (max-width: 900px) {
   .command__column-left {
@@ -1020,7 +1020,7 @@ img {
   }
 }
 .about {
-  background-image: url('../img/parallax-min.jpg');
+  background-image: url('../img/parallax-min.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
