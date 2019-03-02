@@ -41,7 +41,6 @@
   for (var i = 0; i < btnMap.length; i++) {
     btnMap[i].addEventListener("click", function (evt) {
       evt.preventDefault();
-      window.history.pushState(1, '', "#popup");
       var dataSrc = this.getAttribute("href");
       modalShow(containerMap, dataSrc);
     }, false)
@@ -50,7 +49,6 @@
 
   window.addEventListener("keydown", function (evt) {
     if (evt.keyCode === 27) {
-      history.back();
       var modal = document.querySelectorAll(".modal--show");
       if (modal) {
         for (var i = 0; i < modal.length; i++) {
@@ -66,15 +64,6 @@
       modalClose(modal[i]);
     }
   });
-
-  window.onpopstate = function(event) {
-    var modal = document.querySelectorAll(".modal--show");
-      if (modal) {
-        for (var i = 0; i < modal.length; i++) {
-          modalClose(modal[i]);
-        }
-      }
-    };
 
 
 })();
