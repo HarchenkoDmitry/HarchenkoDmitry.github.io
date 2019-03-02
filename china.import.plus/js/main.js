@@ -41,9 +41,10 @@
   for (var i = 0; i < btnMap.length; i++) {
     btnMap[i].addEventListener("click", function (evt) {
       evt.preventDefault();
+      window.history.pushState(1, '', "#popup");
       var dataSrc = this.getAttribute("href");
       modalShow(containerMap, dataSrc);
-    })
+    }, false)
   };
 
 
