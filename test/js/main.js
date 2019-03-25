@@ -4,6 +4,52 @@ window.onload = function() {
 
 
   // header
+
+  var phoneBtn = document.querySelector(".page-header__phone-salons-btn");
+  var phoneList = document.querySelector(".page-header__phone-salons");
+
+  phoneBtn.addEventListener("click", function() {
+    phoneList.classList.toggle("active");
+  });
+
+  var searchBtn = document.querySelector(".page-header__search button");
+  var searchForm = document.querySelector(".page-header__search");
+
+  searchBtn.addEventListener("click", function(evt) {
+    if (document.documentElement.clientWidth <= 750) {
+      evt.preventDefault();
+      searchForm.classList.toggle("active");
+      var inputSearch = searchForm.querySelector("input");
+      if (inputSearch.value) {
+        searchForm.submit();
+      }
+    }
+  });
+
+
+
+
+  function closePopup(elem, evt) {
+    var tar = evt.target;
+    var bool = false;
+    while (tar != document.body) {
+      if (tar == elem.parentElement && elem.classList.contains("active")) {
+        bool = true;
+      }
+      var tar = tar.parentElement;
+    }
+    if (!bool) {
+      elem.classList.remove("active");
+    }
+  }
+
+
+  document.body.addEventListener("click", function(evt) {
+    closePopup(phoneList, evt);
+    closePopup(searchForm, evt);
+  });
+
+
   var btnNav = document.querySelector(".page-header__nav-btn");
   var navList = document.querySelector(".page-header__list");
 
@@ -15,26 +61,22 @@ window.onload = function() {
     btnNav.classList.toggle("active");
     navList.classList.toggle("active");
 
+    function closeSubMenu(elem) {
+      if (elem) {
+        elem.style.height = elem.scrollHeight + "px";
+        elem.offsetWidth = elem.offsetWidth;
+        elem.style.height = 0;
+        elem.classList.remove("active");
+      }
+    }
 
     // close inner nav
     if (!btnNav.classList.contains("active")) {
       for (var i = 0; i < btnInnerNav.length; i++) {
-        if (btnInnerNav[i].nextElementSibling) {
-          btnInnerNav[i].nextElementSibling.style.height = btnInnerNav[i].nextElementSibling.scrollHeight + "px";
-          setTimeout(function(elem) {
-            elem.nextElementSibling.style.height = 0;
-          }, 0, btnInnerNav[i]);
-          btnInnerNav[i].nextElementSibling.classList.remove("active");
-        }
+        closeSubMenu(btnInnerNav[i].nextElementSibling);
       }
       for (var i = 0; i < listItem.length; i++) {
-        if (listItem[i].nextElementSibling) {
-          listItem[i].nextElementSibling.style.height = listItem[i].nextElementSibling.scrollHeight + "px";
-          setTimeout(function(elem) {
-            elem.nextElementSibling.style.height = 0;
-          }, 0, listItem[i]);
-          listItem[i].nextElementSibling.classList.remove("active");
-        }
+        closeSubMenu(listItem[i].nextElementSibling);
       }
     }
 
@@ -58,9 +100,8 @@ window.onload = function() {
 
           if (el.nextElementSibling.classList.contains("active")) {
             el.nextElementSibling.style.height = el.nextElementSibling.scrollHeight + "px";
-            setTimeout(function() {
-              el.nextElementSibling.style.height = 0;
-            }, 0);
+            el.offsetWidth = el.offsetWidth; 
+            el.nextElementSibling.style.height = 0;
           } else {
             el.nextElementSibling.style.height = el.nextElementSibling.scrollHeight + "px";
             setTimeout(function() {

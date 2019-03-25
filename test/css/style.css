@@ -29,9 +29,10 @@ body {
   overflow: hidden;
 }
 .container {
+  box-sizing: border-box;
   padding: 0 50px;
   max-width: 1400px;
-  width: calc(100% - 100px);
+  width: 100%;
   margin: 0 auto;
 }
 h1 {
@@ -168,7 +169,11 @@ input {
 @media screen and (max-width: 1300px) {
   .container {
     padding: 0 20px;
-    width: calc(100% - 40px);
+  }
+}
+@media screen and (max-width: 750px) {
+  .container {
+    padding: 0 5px;
   }
 }
 .page-header {
@@ -194,6 +199,8 @@ input {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   line-height: 1;
 }
 .page-header__social a {
@@ -215,8 +222,14 @@ input {
   position: absolute;
   right: 0;
   top: 0;
-  padding: 13px;
+  width: 42px;
+  height: 42px;
   cursor: pointer;
+  background-image: url("../img/search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15px;
+  outline: none;
 }
 .page-header__logo {
   text-align: center;
@@ -233,19 +246,18 @@ input {
 .page-header__user a {
   color: #262626;
   text-decoration: none;
-  padding-left: 30px;
   margin-left: 30px;
   position: relative;
 }
 .page-header__user a::before {
   content: '';
-  display: block;
-  position: absolute;
+  display: inline-block;
   width: 16px;
   height: 15px;
+  padding-left: 14px;
+  vertical-align: middle;
   background-repeat: no-repeat;
-  background-position: center top;
-  background-size: contain;
+  background-position: left center;
   left: 0;
   top: 1px;
 }
@@ -290,14 +302,43 @@ input {
   left: 0;
 }
 .page-header__phone-salons {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+.page-header__phone-wrap {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-positive: 1;
-      flex-grow: 1;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.page-header__phone-salons-btn {
+  background: none;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding-right: 25px;
+  font-size: 16px;
+  color: #eb3d00;
+  position: relative;
+  display: none;
+}
+.page-header__phone-salons-btn::after {
+  content: '';
+  display: block;
+  width: 13px;
+  height: 12px;
+  position: absolute;
+  background-image: url(../img/arrow-orange.png);
+  background-position: right center;
+  background-size: 13px 12px;
+  background-repeat: no-repeat;
+  right: 0;
+  top: calc(50% - 6px);
+  transition: 0.2s;
 }
 .page-header__phone-salons-item {
   color: #262626;
@@ -312,6 +353,7 @@ input {
 .page-header__phone-salons-item p {
   font-size: 14px;
   margin: 0;
+  white-space: nowrap;
 }
 .page-header__nav {
   position: relative;
@@ -518,6 +560,37 @@ input {
   }
 }
 @media screen and (max-width: 1280px) {
+  .page-header__row:first-child {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .page-header__social {
+    display: block;
+    text-align: center;
+  }
+  .page-header__social p {
+    width: 100%;
+  }
+  .page-header__social a {
+    margin: 0 5px;
+  }
+  .page-header__search {
+    position: absolute;
+    bottom: 75px;
+    right: 20px;
+  }
+  .page-header__logo {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
+  }
+  .page-header__logo p {
+    width: 260px;
+    letter-spacing: 1px;
+  }
   .page-header__user {
     position: absolute;
     bottom: 17px;
@@ -532,6 +605,56 @@ input {
   }
   .page-header__user .page-header__bookmark::before {
     background-image: url("../img/bookmark--white.png");
+  }
+  .page-header__phone a {
+    font-size: 20px;
+  }
+  .page-header__phone p {
+    font-size: 14px;
+  }
+  .page-header__phone-salons {
+    -ms-flex-positive: 0;
+        flex-grow: 0;
+    margin-right: 35%;
+    position: relative;
+  }
+  .page-header__phone-salons.active .page-header__phone-salons-btn::after {
+    transform: rotate(90deg);
+  }
+  .page-header__phone-salons.active .page-header__phone-wrap {
+    visibility: visible;
+    transform: none;
+    opacity: 1;
+  }
+  .page-header__phone-salons-btn {
+    display: block;
+  }
+  .page-header__phone-wrap {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: start;
+        align-items: flex-start;
+    visibility: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: 0.2s;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 5px);
+    z-index: 3;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 #aaa;
+  }
+  .page-header__phone-wrap .page-header__phone-salons-item {
+    box-sizing: border-box;
+    margin: 0;
+    border-bottom: 1px solid #aaa;
+    padding: 10px;
+    width: 100%;
+  }
+  .page-header__phone-wrap .page-header__phone-salons-item:last-child {
+    border: none;
   }
   .page-header__nav .page-header__list {
     visibility: hidden;
@@ -568,5 +691,93 @@ input {
   }
   .page-header__nav-btn {
     display: block;
+  }
+}
+@media screen and (max-width: 750px) {
+  .page-header__row {
+    border: none !important;
+    padding: 0;
+  }
+  .page-header__row:first-child {
+    padding-top: 5px;
+  }
+  .page-header__social {
+    display: none;
+  }
+  .page-header__partner {
+    position: absolute;
+    bottom: 67px;
+    right: 10px;
+    width: 48px;
+  }
+  .page-header__order-call {
+    display: none;
+  }
+  .page-header__phone {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    line-height: 1;
+  }
+  .page-header__phone p {
+    display: inline-block;
+    color: #000;
+    margin-left: 5px;
+  }
+  .page-header__phone-salons {
+    width: auto;
+  }
+  .page-header__phone-salons br {
+    display: none;
+  }
+  .page-header__search {
+    bottom: 0;
+    right: 5px;
+    z-index: 2;
+    width: 70%;
+  }
+  .page-header__search input {
+    display: block;
+    box-sizing: border-box;
+    visibility: hidden;
+    height: 58px;
+    background-color: #555;
+    color: #fff;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: 0.4s;
+    padding-right: 65px;
+  }
+  .page-header__search input::-moz-placeholder {
+    color: #fff;
+  }
+  .page-header__search input:-ms-input-placeholder {
+    color: #fff;
+  }
+  .page-header__search input::placeholder {
+    color: #fff;
+  }
+  .page-header__search button {
+    height: 58px;
+    width: 58px;
+    right: 20px;
+    background-image: url("../img/search-white.png");
+  }
+  .page-header__search.active input {
+    transform: none;
+    visibility: visible;
+  }
+  .page-header__user {
+    display: -ms-flexbox;
+    display: flex;
+    right: 100px;
+  }
+  .page-header__user a {
+    font-size: 0;
+  }
+  .page-header__user a::before {
+    padding: 5px;
+    background-position: center;
   }
 }
