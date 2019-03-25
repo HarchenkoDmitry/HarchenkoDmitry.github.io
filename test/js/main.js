@@ -33,7 +33,7 @@ window.onload = function() {
     var tar = evt.target;
     var bool = false;
     while (tar != document.body) {
-      if (tar == elem.parentElement && elem.classList.contains("active")) {
+      if (tar == elem && elem.classList.contains("active")) {
         bool = true;
       }
       var tar = tar.parentElement;
