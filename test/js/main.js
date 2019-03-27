@@ -144,14 +144,14 @@ window.onload = function() {
 
   sticky();
 
-  // window.onresize = function () {
-  //   // перерасчет изначально позиции и высоты
-  //   stickyContainer.classList.remove("sticky");
-  //   stickyContainer.style.minHeight = '';
-  //   initialPos = getTopCoord(stickyMenu) + pageYOffset;
-  //   initialHeight = stickyContainer.offsetHeight;
-  //   sticky();
-  // }
+  window.onresize = function () {
+    // перерасчет изначально позиции и высоты
+    stickyContainer.classList.remove("sticky");
+    stickyContainer.style.minHeight = '';
+    initialPos = getTopCoord(stickyMenu) + pageYOffset;
+    initialHeight = stickyContainer.offsetHeight;
+    sticky();
+  }
 
   window.onscroll = function () {
     sticky();

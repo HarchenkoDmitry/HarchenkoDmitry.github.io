@@ -35,6 +35,17 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+.container__header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.container__header a {
+  color: #000;
+}
 h1 {
   font-size: 36px;
 }
@@ -161,6 +172,7 @@ table td {
 }
 img {
   max-width: 100%;
+  max-height: 100%;
   vertical-align: bottom;
 }
 input {
@@ -175,6 +187,144 @@ input {
   .container {
     padding: 0 5px;
   }
+}
+.grid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  box-sizing: border-box;
+  margin-left: -20px;
+}
+.grid li,
+.grid article {
+  box-sizing: border-box;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  min-width: 250px;
+}
+.grid-3 li,
+.grid-3 article {
+  width: calc(33% - 20px);
+}
+.grid-4 li,
+.grid-4 article {
+  width: calc(25% - 20px);
+}
+.card {
+  position: relative;
+}
+.card.new::before {
+  content: 'Новинка';
+}
+.card.hit::before {
+  content: 'хит';
+}
+.card.new::before,
+.card.hit::before {
+  text-transform: uppercase;
+  display: inline-block;
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  padding: 4px 20px;
+  border: 1px solid #fff;
+  top: 17px;
+  left: 17px;
+  z-index: 1;
+  transition: 0.2s;
+}
+.card:hover .card__wrap-img {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.card:hover .card__more,
+.card:hover .card__bookmark,
+.card:hover .card__table {
+  visibility: visible;
+  opacity: 1;
+}
+.card:hover .card__more:hover {
+  background-color: #ff8052;
+}
+.card:hover .card__bookmark:hover {
+  background-color: #ddd;
+}
+.card:hover.new::before,
+.card:hover.hit::before {
+  background-color: #fff;
+  color: #000;
+}
+.card__wrap-img {
+  position: relative;
+  transition: 0.2s;
+}
+.card__wrap-img img {
+  z-index: -1;
+  position: relative;
+}
+.card__more {
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.1s;
+}
+.card__bookmark {
+  position: absolute;
+  font-size: 0;
+  right: 9px;
+  bottom: 9px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  visibility: hidden;
+  transition: 0.1s;
+  opacity: 0;
+}
+.card__bookmark::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 15px;
+  padding-left: 14px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/bookmark.png");
+}
+.card__description {
+  text-align: center;
+}
+.card__description h3 {
+  margin-bottom: 0;
+}
+.card__description p {
+  display: none;
+}
+.card__table {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+}
+.card__table .card__table-row {
+  margin-bottom: 15px;
+}
+.card__table span {
+  display: block;
+  color: #fff;
+  line-height: 1.13;
 }
 .page-header {
   position: relative;
@@ -295,7 +445,7 @@ input {
   line-height: 1.13;
   text-transform: uppercase;
   margin-left: 2%;
-  z-index: 1;
+  z-index: 6;
   transition: 0.4s;
 }
 .page-header__order-call * {
@@ -389,7 +539,7 @@ input {
     position: absolute;
     bottom: 17px;
     right: 50px;
-    z-index: 1;
+    z-index: 5;
   }
   .page-header__user a {
     color: #fff;
@@ -401,7 +551,7 @@ input {
     background-image: url("../img/bookmark--white.png");
   }
   .page-header__phone {
-    z-index: 1;
+    z-index: 5;
     transition: 0.4s;
   }
   .page-header__phone a {
@@ -417,7 +567,7 @@ input {
         flex-grow: 0;
     margin-right: 35%;
     position: relative;
-    z-index: 1;
+    z-index: 6;
     transition: 0.4s;
   }
   .page-header__phone-salons * {
@@ -447,7 +597,7 @@ input {
     position: absolute;
     left: 0;
     top: calc(100% + 5px);
-    z-index: 3;
+    z-index: 6;
     background-color: #fff;
     box-shadow: 0 0 10px 0 #aaa;
   }
@@ -506,7 +656,7 @@ input {
   .page-header__search {
     bottom: 0;
     right: 5px;
-    z-index: 2;
+    z-index: 5;
     width: calc(100% - 90px);
     transition: 0.2s;
   }
@@ -562,6 +712,7 @@ input {
   background-color: #000;
   min-height: 58px;
   transition: 0.5s;
+  z-index: 10;
 }
 .nav .nav__list {
   box-sizing: border-box;
@@ -911,6 +1062,8 @@ input {
 }
 .page-footer__salons-item {
   color: #262626;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
 }
 .page-footer__salons-item h4 {
   margin: 0;
@@ -973,25 +1126,4 @@ input {
   .page-footer__info li a {
     font-size: 14px;
   }
-}
-.grid {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  box-sizing: border-box;
-  margin-left: -20px;
-}
-.grid li {
-  box-sizing: border-box;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  min-width: 250px;
-  -ms-flex-positive: 1;
-      flex-grow: 1;
-}
-.grid-3 li {
-  width: 30%;
 }
