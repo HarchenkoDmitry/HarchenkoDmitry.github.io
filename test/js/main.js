@@ -1,8 +1,6 @@
 window.onload = function() {
 
 
-
-
   // header
 
   var phoneBtn = document.querySelector(".page-header__phone-salons-btn");
@@ -26,9 +24,6 @@ window.onload = function() {
     }
   });
 
-
-
-
   function closePopup(elem, evt) {
     var tar = evt.target;
     var bool = false;
@@ -43,19 +38,16 @@ window.onload = function() {
     }
   }
 
-
   document.body.addEventListener("click", function(evt) {
     closePopup(phoneList, evt);
     closePopup(searchForm, evt);
   });
 
+  var btnNav = document.querySelector(".nav__nav-btn");
+  var navList = document.querySelector(".nav__list");
 
-  var btnNav = document.querySelector(".page-header__nav-btn");
-  var navList = document.querySelector(".page-header__list");
-
-  var listItem = document.querySelectorAll(".page-header__link");
-  var btnInnerNav = document.querySelectorAll(".page-header__inner-btn");
-
+  var listItem = document.querySelectorAll(".nav__link");
+  var btnInnerNav = document.querySelectorAll(".nav__inner-btn");
 
   btnNav.addEventListener("click", function() {
     btnNav.classList.toggle("active");
@@ -82,44 +74,82 @@ window.onload = function() {
 
   });
 
-
   for (var i = 0; i < listItem.length; i++) {
     listItem[i].style.transitionDelay = i * 0.05 + "s";
   }
 
-
-  // открывает подразделы навигации
-  function opening(elem) {
+  // открывает подразделы навигации (разрешение по умолчанию 5000)
+  function opening(elem, resolution = 5000) {
     for (var i = 0; i < elem.length; i++) {
 
       elem[i].addEventListener("click", function(evt) {
 
-        if (this.nextElementSibling) {
+        if (document.documentElement.clientWidth <= resolution) {
 
-          var el = this;
+          if (this.nextElementSibling) {
 
-          if (el.nextElementSibling.classList.contains("active")) {
-            el.nextElementSibling.style.height = el.nextElementSibling.scrollHeight + "px";
-            el.offsetWidth = el.offsetWidth; 
-            el.nextElementSibling.style.height = 0;
-          } else {
-            el.nextElementSibling.style.height = el.nextElementSibling.scrollHeight + "px";
-            setTimeout(function() {
-              el.nextElementSibling.style.height = "auto";
-            }, 400);
+            var el = this.nextElementSibling;
+
+            if (el.classList.contains("active")) {
+              el.style.height = el.scrollHeight + "px";
+              el.offsetWidth = el.offsetWidth; 
+              el.style.height = 0;
+            } else {
+              el.style.height = el.scrollHeight + "px";
+              setTimeout(function() {
+                el.style.height = "auto";
+              }, 400);
+            }
+            
+            evt.preventDefault();
+            el.classList.toggle("active");
           }
-          
-          evt.preventDefault();
-          this.nextElementSibling.classList.toggle("active");
+
         }
 
       });
     }
   }
 
-   opening(listItem);
-   opening(btnInnerNav);
+  opening(listItem, 1280);
+  opening(btnInnerNav);
+
+
+  // sticky menu
+  var stickyContainer = document.querySelector(".page-header");
+  var stickyMenu = document.querySelector(".nav");
+
+  function getTopCoord(elem) {
+    return stickyMenu.getBoundingClientRect().top;
+  }
+
+  var initialPos = getTopCoord(stickyMenu) + pageYOffset;
+
+  function sticky() {
+    if (document.body.offsetWidth < 1280) {
+      if (getTopCoord(stickyMenu) < 0) {
+        stickyContainer.classList.add("sticky");
+      } else if (pageYOffset < initialPos) {
+        stickyContainer.classList.remove("sticky");
+      }
+    } else {
+      stickyContainer.classList.remove("sticky");
+    }
+  }
+
+  sticky();
+
+  window.onresize = function () {
+    // перерасчет изначально позиции
+    stickyContainer.classList.remove("sticky");
+    initialPos = getTopCoord(stickyMenu) + pageYOffset;
+    sticky();
+  }
+
+  window.onscroll = function () {
+    sticky();
+    // console.log(stickyMenu.getBoundingClientRect().top, pageYOffset, initialPos)
+  }
 
   
-
 }
