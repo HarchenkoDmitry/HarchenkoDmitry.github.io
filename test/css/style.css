@@ -203,15 +203,25 @@ input {
   box-sizing: border-box;
   margin-left: 20px;
   margin-bottom: 20px;
-  min-width: 250px;
-}
-.grid-3 li,
-.grid-3 article {
-  width: calc(33% - 20px);
-}
-.grid-4 li,
-.grid-4 article {
   width: calc(25% - 20px);
+}
+@media screen and (max-width: 1100px) {
+  .grid li,
+  .grid article {
+    width: calc(33% - 20px);
+  }
+}
+@media screen and (max-width: 800px) {
+  .grid li,
+  .grid article {
+    width: calc(50% - 20px);
+  }
+}
+@media screen and (max-width: 500px) {
+  .grid li,
+  .grid article {
+    width: calc(100% - 20px);
+  }
 }
 .card {
   position: relative;
@@ -237,26 +247,6 @@ input {
   z-index: 1;
   transition: 0.2s;
 }
-.card:hover .card__wrap-img {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-.card:hover .card__more,
-.card:hover .card__bookmark,
-.card:hover .card__table {
-  visibility: visible;
-  opacity: 1;
-}
-.card:hover .card__more:hover {
-  background-color: #ff8052;
-}
-.card:hover .card__bookmark:hover {
-  background-color: #ddd;
-}
-.card:hover.new::before,
-.card:hover.hit::before {
-  background-color: #fff;
-  color: #000;
-}
 .card__wrap-img {
   position: relative;
   transition: 0.2s;
@@ -264,9 +254,10 @@ input {
 .card__wrap-img img {
   z-index: -1;
   position: relative;
+  width: 100%;
 }
 .card__more {
-  top: 60%;
+  top: 65%;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
@@ -286,9 +277,7 @@ input {
   width: 30px;
   height: 30px;
   background-color: #fff;
-  visibility: hidden;
   transition: 0.1s;
-  opacity: 0;
 }
 .card__bookmark::before {
   content: '';
@@ -300,6 +289,9 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("../img/bookmark.png");
+}
+.card__bookmark:hover {
+  background-color: #ddd;
 }
 .card__description {
   text-align: center;
@@ -325,6 +317,42 @@ input {
   display: block;
   color: #fff;
   line-height: 1.13;
+}
+@media (hover) {
+  .card:hover .card__wrap-img {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .card:hover .card__more,
+  .card:hover .card__table {
+    visibility: visible;
+    opacity: 1;
+  }
+  .card:hover .card__more:hover {
+    background-color: #ff8052;
+  }
+  .card:hover.new::before,
+  .card:hover.hit::before {
+    background-color: #fff;
+    color: #000;
+  }
+}
+@media (pointer: coarse) {
+  .card:active .card__wrap-img {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .card:active .card__more,
+  .card:active .card__table {
+    visibility: visible;
+    opacity: 1;
+  }
+  .card:active .card__more:hover {
+    background-color: #ff8052;
+  }
+  .card:active.new::before,
+  .card:active.hit::before {
+    background-color: #fff;
+    color: #000;
+  }
 }
 .page-header {
   position: relative;
@@ -445,7 +473,7 @@ input {
   line-height: 1.13;
   text-transform: uppercase;
   margin-left: 2%;
-  z-index: 6;
+  z-index: 15;
   transition: 0.4s;
 }
 .page-header__order-call * {
@@ -539,7 +567,7 @@ input {
     position: absolute;
     bottom: 17px;
     right: 50px;
-    z-index: 5;
+    z-index: 15;
   }
   .page-header__user a {
     color: #fff;
@@ -551,7 +579,7 @@ input {
     background-image: url("../img/bookmark--white.png");
   }
   .page-header__phone {
-    z-index: 5;
+    z-index: 15;
     transition: 0.4s;
   }
   .page-header__phone a {
@@ -567,7 +595,7 @@ input {
         flex-grow: 0;
     margin-right: 35%;
     position: relative;
-    z-index: 6;
+    z-index: 15;
     transition: 0.4s;
   }
   .page-header__phone-salons * {
@@ -597,7 +625,7 @@ input {
     position: absolute;
     left: 0;
     top: calc(100% + 5px);
-    z-index: 6;
+    z-index: 15;
     background-color: #fff;
     box-shadow: 0 0 10px 0 #aaa;
   }
@@ -656,7 +684,7 @@ input {
   .page-header__search {
     bottom: 0;
     right: 5px;
-    z-index: 5;
+    z-index: 15;
     width: calc(100% - 90px);
     transition: 0.2s;
   }
