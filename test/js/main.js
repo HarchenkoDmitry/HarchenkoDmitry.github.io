@@ -125,24 +125,32 @@ window.onload = function() {
 
   var initialPos = getTopCoord(stickyMenu) + pageYOffset;
 
+  //изначальная высота хедера, чтобы во время перемещения элемнтов высота не прыгала
+  var initialHeight = stickyContainer.offsetHeight;
+
   function sticky() {
+    stickyContainer.offsetHWidth = stickyContainer.offsetHWidth;
     if (document.body.offsetWidth < 1280) {
-      if (getTopCoord(stickyMenu) < 0) {
+      if (getTopCoord(stickyMenu) < 0 && !stickyContainer.classList.contains("sticky")) {
         stickyContainer.classList.add("sticky");
-      } else if (pageYOffset < initialPos) {
+        stickyContainer.style.minHeight = initialHeight + "px";
+      } else if (pageYOffset <= initialPos && stickyContainer.classList.contains("sticky")) {
         stickyContainer.classList.remove("sticky");
       }
-    } else {
+    } else if (stickyContainer.classList.contains("sticky")) {
       stickyContainer.classList.remove("sticky");
+      stickyContainer.style.minHeight = '';
     }
   }
 
   sticky();
 
   window.onresize = function () {
-    // перерасчет изначально позиции
+    // перерасчет изначально позиции и высоты
     stickyContainer.classList.remove("sticky");
+    stickyContainer.style.minHeight = '';
     initialPos = getTopCoord(stickyMenu) + pageYOffset;
+    initialHeight = stickyContainer.offsetHeight;
     sticky();
   }
 
