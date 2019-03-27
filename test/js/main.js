@@ -1,8 +1,14 @@
 window.onload = function() {
 
+  // проверка на наличие сенсорного экрана
+  if ("ontouchstart" in window || navigator.msMaxTouchPoints) { isTouch = true; } else { isTouch = false; } 
 
+
+  // 
+  // 
   // header
-
+  // 
+  // 
   var phoneBtn = document.querySelector(".page-header__phone-salons-btn");
   var phoneList = document.querySelector(".page-header__phone-salons");
 
@@ -22,25 +28,6 @@ window.onload = function() {
         searchForm.submit();
       }
     }
-  });
-
-  function closePopup(elem, evt) {
-    var tar = evt.target;
-    var bool = false;
-    while (tar != document.body) {
-      if (tar == elem && elem.classList.contains("active")) {
-        bool = true;
-      }
-      var tar = tar.parentElement;
-    }
-    if (!bool) {
-      elem.classList.remove("active");
-    }
-  }
-
-  document.body.addEventListener("click", function(evt) {
-    closePopup(phoneList, evt);
-    closePopup(searchForm, evt);
   });
 
   var btnNav = document.querySelector(".nav__nav-btn");
@@ -156,5 +143,42 @@ window.onload = function() {
   window.onscroll = function () {
     sticky();
   }
-  
+  // 
+  // 
+  // End header
+  // 
+  // 
+
+
+  if (isTouch) {
+    var card = document.querySelectorAll(".card");
+
+    for (var i = 0; i < card.length; i++) {
+      card[i].addEventListener("click", function() {
+        this.classList.add("active");
+      });
+    }
+  }
+
+  function removeActivity(elem, evt) {
+    var tar = evt.target;
+    var bool = false;
+    while (tar != document.body) {
+      if (tar == elem && elem.classList.contains("active")) {
+        bool = true;
+      }
+      var tar = tar.parentElement;
+    }
+    if (!bool) {
+      elem.classList.remove("active");
+    }
+  }
+
+  document.body.addEventListener("click", function(evt) {
+    removeActivity(phoneList, evt);
+    removeActivity(searchForm, evt);
+    for (var i = 0; i < card.length; i++) {
+      removeActivity(card[i], evt);
+    }
+  });  
 }

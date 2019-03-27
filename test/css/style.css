@@ -337,19 +337,19 @@ input {
   }
 }
 @media (pointer: coarse) {
-  .card:active .card__wrap-img {
+  .card.active .card__wrap-img {
     background-color: rgba(0, 0, 0, 0.6);
   }
-  .card:active .card__more,
-  .card:active .card__table {
+  .card.active .card__more,
+  .card.active .card__table {
     visibility: visible;
     opacity: 1;
   }
-  .card:active .card__more:hover {
+  .card.active .card__more:hover {
     background-color: #ff8052;
   }
-  .card:active.new::before,
-  .card:active.hit::before {
+  .card.active.new::before,
+  .card.active.hit::before {
     background-color: #fff;
     color: #000;
   }
