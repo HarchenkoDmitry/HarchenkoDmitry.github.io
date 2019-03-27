@@ -129,7 +129,6 @@ window.onload = function() {
   var initialHeight = stickyContainer.offsetHeight;
 
   function sticky() {
-    stickyContainer.offsetHWidth = stickyContainer.offsetHWidth;
     if (document.body.offsetWidth < 1280) {
       if (getTopCoord(stickyMenu) < 0 && !stickyContainer.classList.contains("sticky")) {
         stickyContainer.classList.add("sticky");
@@ -145,19 +144,17 @@ window.onload = function() {
 
   sticky();
 
-  window.onresize = function () {
-    // перерасчет изначально позиции и высоты
-    stickyContainer.classList.remove("sticky");
-    stickyContainer.style.minHeight = '';
-    initialPos = getTopCoord(stickyMenu) + pageYOffset;
-    initialHeight = stickyContainer.offsetHeight;
-    sticky();
-  }
+  // window.onresize = function () {
+  //   // перерасчет изначально позиции и высоты
+  //   stickyContainer.classList.remove("sticky");
+  //   stickyContainer.style.minHeight = '';
+  //   initialPos = getTopCoord(stickyMenu) + pageYOffset;
+  //   initialHeight = stickyContainer.offsetHeight;
+  //   sticky();
+  // }
 
   window.onscroll = function () {
     sticky();
-    // console.log(stickyMenu.getBoundingClientRect().top, pageYOffset, initialPos)
   }
-
   
 }
