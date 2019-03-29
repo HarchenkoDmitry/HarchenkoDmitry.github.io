@@ -40,6 +40,13 @@ window.onload = function() {
     btnNav.classList.toggle("active");
     navList.classList.toggle("active");
 
+    if (navList.classList.contains("active")) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "";
+    }
+    
+
     function closeSubMenu(elem) {
       if (elem) {
         elem.style.height = elem.scrollHeight + "px";
@@ -150,9 +157,9 @@ window.onload = function() {
   // 
 
 
-  if (isTouch) {
-    var card = document.querySelectorAll(".card");
+  var card = document.querySelectorAll(".card");
 
+  if (isTouch) {
     for (var i = 0; i < card.length; i++) {
       card[i].addEventListener("click", function() {
         this.classList.add("active");
@@ -174,6 +181,8 @@ window.onload = function() {
     }
   }
 
+
+
   document.body.addEventListener("click", function(evt) {
     removeActivity(phoneList, evt);
     removeActivity(searchForm, evt);
@@ -182,3 +191,26 @@ window.onload = function() {
     }
   });  
 }
+
+
+
+
+
+
+
+//
+//
+// Slicky slider
+//
+//
+
+$(document).ready(function(){
+  $('.slider__container').slick({
+    arrows: false,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    appendDots:$(".slider__control"),
+  });
+});
