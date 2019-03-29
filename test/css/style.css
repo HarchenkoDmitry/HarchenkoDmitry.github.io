@@ -1193,6 +1193,7 @@ input::placeholder {
   width: 100%;
 }
 .slider__item-description {
+  box-sizing: border-box;
   position: absolute;
   top: 50px;
   right: 10%;
@@ -1243,6 +1244,25 @@ input::placeholder {
   outline: none;
   transition: 0.2s;
 }
+@media screen and (max-width: 1000px) {
+  .slider__item-description {
+    width: 100%;
+    right: 0;
+    top: 5%;
+    padding: 0 5%;
+  }
+  .slider__item {
+    height: 500px;
+  }
+  .slider__promo {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .slider__item-description h1 {
+    font-size: 30px;
+  }
+}
 .catalog {
   box-sizing: border-box;
   width: 350px;
@@ -1267,6 +1287,11 @@ input::placeholder {
 .catalog button {
   padding: 17px;
   top: 0;
+}
+@media screen and (max-width: 1000px) {
+  .catalog {
+    display: none;
+  }
 }
 .advantage p {
   box-sizing: border-box;
