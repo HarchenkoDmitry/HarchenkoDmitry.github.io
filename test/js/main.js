@@ -9,6 +9,15 @@ window.onload = function() {
   // header
   // 
   // 
+
+  var userControlBtn = document.querySelector(".page-header__user-control.enter");
+
+  if (userControlBtn) {
+    userControlBtn.addEventListener("click", function() {
+      userControlBtn.classList.toggle("active");
+    });
+  }
+
   var phoneBtn = document.querySelector(".page-header__phone-salons-btn");
   var phoneList = document.querySelector(".page-header__phone-salons");
 
@@ -168,22 +177,25 @@ window.onload = function() {
   }
 
   function removeActivity(elem, evt) {
-    var tar = evt.target;
-    var bool = false;
-    while (tar != document.body) {
-      if (tar == elem && elem.classList.contains("active")) {
-        bool = true;
+    if (elem) {
+      var tar = evt.target;
+      var bool = false;
+      while (tar != document.body) {
+        if (tar == elem && elem.classList.contains("active")) {
+          bool = true;
+        }
+        var tar = tar.parentElement;
       }
-      var tar = tar.parentElement;
-    }
-    if (!bool) {
-      elem.classList.remove("active");
+      if (!bool) {
+        elem.classList.remove("active");
+      }
     }
   }
 
 
 
   document.body.addEventListener("click", function(evt) {
+    removeActivity(userControlBtn, evt);
     removeActivity(phoneList, evt);
     removeActivity(searchForm, evt);
     for (var i = 0; i < card.length; i++) {
@@ -209,8 +221,10 @@ $(document).ready(function(){
     arrows: false,
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     fade: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
     appendDots:$(".slider__control"),
   });
 });
