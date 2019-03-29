@@ -579,7 +579,7 @@ input::placeholder {
   text-decoration: none;
   padding: 5px 15px;
   white-space: nowrap;
-  transition: 0.2s;
+  transition: 0.1s;
 }
 .page-header__user-control-list a:hover {
   background-color: #eb3d00;
@@ -1207,11 +1207,12 @@ input::placeholder {
   color: #000;
   box-sizing: border-box;
   height: 58px;
-  margin: 0;
+  margin: 0 !important;
 }
 .sticky .page-header__user > a .user-svg,
 .sticky .page-header__user span .user-svg {
   top: 5px !important;
+  margin: 0 !important;
 }
 .sticky .page-header__user > a .arrow-svg,
 .sticky .page-header__user span .arrow-svg {
@@ -1224,6 +1225,8 @@ input::placeholder {
 }
 .sticky .page-header__user-control-list {
   top: 58px;
+  left: auto;
+  right: 0;
 }
 .sticky .page-header__phone,
 .sticky .page-header__order-call,
@@ -1264,7 +1267,7 @@ input::placeholder {
     position: static;
   }
   .sticky .page-header__phone {
-    left: 25%;
+    left: 23%;
     width: auto;
     text-align: left;
     line-height: 1.4;
@@ -1281,10 +1284,12 @@ input::placeholder {
     margin-left: 0;
   }
   .sticky .page-header__user {
-    right: 3%;
+    right: 0;
   }
-  .sticky .page-header__user a {
+  .sticky .page-header__user > a,
+  .sticky .page-header__user span {
     margin-left: 10px;
+    padding: 17px 7px;
   }
   .sticky .page-header__search {
     opacity: 0;
