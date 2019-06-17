@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>tabs</title>
+  <style>
+    .tabs {
+      width: 60%;
+      margin: auto;
+      border: 1px solid black;
+    }
+
+    .tabs__header {
+      border: 1px solid red;
+      display: flex;
+      align-items: center;
+    }
+
+    .tabs__button {
+      background-color: pink;
+      border: 1px solid red;
+      margin: 0;
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .tabs__button.active {
+      background-color: red;
+    }
+
+    .tabs__main {
+      border: 1px solid green;
+    }
+
+    .tabs__item {
+      overflow: hidden;
+      padding: 0 20px;
+      visibility: hidden;
+      height: 0;
+    }
+
+    .tabs__item.active {
+      height: auto;
+      visibility: visible;
+    }
+
+  </style>
+</head>
+<body>
+
+  <section class="tabs">
+    <header class="tabs__header">
+      <button type="button" class="tabs__button active">Бумага 80г</button>
+      <button type="button" class="tabs__button">Бумага 80г</button>
+      <button type="button" class="tabs__button">Бумага 80г</button>
+    </header>
+
+    <section class="tabs__main">
+      <section class="tabs__item active">
+        <table>
+          <tr>
+            
+          </tr>
+        </table>
+      </section>
+
+      <section class="tabs__item">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex dolorem odit officiis aspernatur rem excepturi suscipit minima similique animi est necessitatibus, sit vero illo. Quia deserunt quaerat aliquam dolores temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex dolorem odit officiis aspernatur rem excepturi suscipit minima similique animi est necessitatibus, sit vero illo. Quia deserunt quaerat aliquam dolores temporibus.</p>
+        <button>2</button>
+      </section>
+
+      <section class="tabs__item">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex dolorem odit officiis aspernatur rem excepturi suscipit minima similique animi est necessitatibus, sit vero illo. Quia deserunt quaerat aliquam dolores temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex dolorem odit officiis aspernatur rem excepturi suscipit minima similique animi est necessitatibus, sit vero illo. Quia deserunt quaerat aliquam dolores temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex dolorem odit officiis aspernatur rem excepturi suscipit minima similique animi est necessitatibus, sit vero illo. Quia deserunt quaerat aliquam dolores temporibus.</p>
+        <button>3</button>
+      </section>
+    </section>
+  </section>
+
+  <script>
+
+    //
+    //
+    //Polyfill ie9+
+    //
+    /*
+    (function() {
+      if (typeof NodeList.prototype.forEach === "function")
+        return false;
+      else
+        NodeList.prototype.forEach = Array.prototype.forEach;
+    })();
+    var demos = document.querySelectorAll('.demo');
+    demos.forEach(function(item) {
+      item.style.color = 'red';
+    })
+    var gurkins = ['gur1', 'gur2', 'gur3'];
+    gurkins.forEach(function(item) {
+      console.log(item);
+    });
+    */
+    //
+    //
+
+    toggleTabs();
+
+    function toggleTabs() {
+
+      var tabContainer = document.querySelectorAll(".tabs");
+
+      tabContainer.forEach(function(tabsItem, i) {
+        var tabButtonArr = tabsItem.querySelectorAll(".tabs__button");
+        var tabItemArr = tabsItem.querySelectorAll(".tabs__item");
+
+        if (tabButtonArr.length !== tabItemArr.length) {
+          console.log(tabsItem, "Неравное колличество кнопок и вкладок");
+          return
+        }
+
+        tabButtonArr.forEach(function(itemButton, i) {
+          itemButton.addEventListener("click", function() {
+            changeTabs(this);
+          });
+        });
+
+        function changeTabs(item) {
+          tabButtonArr.forEach(function(tabsButton, i) {
+            if (tabsButton.classList.contains("active")) {
+              tabsButton.classList.remove("active");
+              tabItemArr[i].classList.remove("active");
+            }
+            if (item === tabsButton) {
+              item.classList.add("active");
+              tabItemArr[i].classList.add("active");
+            }
+          });
+
+        };
+
+      });
+
+    };
+
+
+  </script>
+
+</body>
+</html>
