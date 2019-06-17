@@ -77,12 +77,14 @@
     var url = 'https://docs.google.com/spreadsheets/d/1dNnFsk__-_1lQJPdG2ckwArcUH_GKCaB0esA6sZX5wU/edit?usp=sharing';
     var container = document.querySelectorAll('.tabs__item');
     
+    var parser = new DOMParser();
+    
     var request = new XMLHttpRequest();
     request.open('GET', url);
     request.responseType = 'text';
     request.onload = function() {
       var table = request.response;
-      console.log(table);
+      table = parser.parseFromString(table, "text/html");
       container[0].innerHTML = table;
     };
     request.send();
