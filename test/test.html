@@ -87,7 +87,7 @@
       resp = parser.parseFromString(resp, "text/html");
       console.log(resp);
       var table = resp.querySelector('table');
-      container[0].innerHTML = table;
+      container[0].appendChild(table);
     };
     request.send();
 
