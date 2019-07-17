@@ -1,0 +1,56 @@
+body {
+	font-family: Arial;
+}
+.tetris {
+	position: relative;
+}
+
+#start {
+	box-sizing: border-box;
+	background-color: lightgreen;
+	border: 1px solid black;
+	width: 135px;
+	height: 30px;
+	position: absolute;
+	left: 45px;
+	top: 105px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+}
+#start:hover {
+	background-color: #7DC37E;
+}
+#start:active {
+	background-color: darkgreen;
+}
+
+.control {
+	position: absolute;
+	display: flex;
+	width: 75px;
+	top: 285px;
+	left: 120px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.control__btn {
+	box-sizing: border-box;
+	background-color: lightgreen;
+	border: 1px solid black;
+	width: 15px;
+	height: 15px;
+	text-align: center;
+	font-size: 8px;
+	font-weight: bold;
+	line-height: 15px;
+}
+.control__btn:first-child {
+	margin: 15px 30px;
+	align-items: center;
+}
+
+.tetris--active #start,
+.tetris--active .control {
+	display: none;
+}
